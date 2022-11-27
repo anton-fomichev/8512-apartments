@@ -1,5 +1,5 @@
-function App(): JSX.Element {
-  return <p>Hello, world!</p>;
-}
+import { MainPage } from '../../pages/MainPage/MainPage';
 
-export default App;
+export const App = (): JSX.Element => (
+  <MainPage />
+);
