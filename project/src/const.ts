@@ -6,6 +6,11 @@ export const STORIES: StoryType[] = [
     text: 'Комфорт апартаментов',
     imageId: 1,
   },
+  {
+    id: 2,
+    text: 'Рядом',
+    imageId: 2,
+  },
 ];
 
 export const APARTS: ApartsType[] = [

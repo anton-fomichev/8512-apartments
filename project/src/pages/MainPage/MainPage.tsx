@@ -1,4 +1,5 @@
 import { Aparts } from '../../components/Aparts/Aparts';
+import { BookMenu } from '../../components/BookMenu/BookMenu';
 import { Container } from '../../components/Container/Container';
 import { Flex } from '../../components/Flex/Flex';
 import { Footer } from '../../components/Footer/Footer';
@@ -11,6 +12,7 @@ import styles from './styles.module.css';
 export const MainPage = (): JSX.Element => (
   <>
     <Header />
+    <BookMenu />
     <main className={styles['main-home']}>
       <Container>
         <p className={styles.info}>
@@ -38,7 +40,7 @@ export const MainPage = (): JSX.Element => (
             image={IMAGES[1]}
           />
           <Story
-            story={STORIES[0]}
+            story={STORIES[1]}
             image={IMAGES[2]}
             size={Size.lg}
           />

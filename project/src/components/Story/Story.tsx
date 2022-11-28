@@ -22,9 +22,11 @@ export const Story = ({ story, image, size }: StoryProps): JSX.Element => {
     <div className={storyClass}>
       <img className={styles['story__img']} src={image.src} alt={image.alt} />
       <div className={styles['story__navigation']}>
-        <span className={styles.this}>{1}</span>
+        <span className={styles.this}>01</span>
         <span className="visually-hidden">из</span>
-        <span className={styles.total}>{totalCount}</span>
+        <span className={styles.total}>
+          {totalCount < 10 && '0'}{totalCount}
+        </span>
       </div>
       <p className={styles.content}>{story.text}</p>
       <Button parentClass={styles.button}>

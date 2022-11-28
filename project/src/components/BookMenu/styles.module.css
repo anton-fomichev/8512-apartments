@@ -1,0 +1,20 @@
+.book-menu {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--gray);
+  border-radius: 1em;
+  padding: 24px;
+  min-width: 578px;
+  cursor: pointer;
+}
+
+.options {
+  display: flex;
+  gap: 1em;
+}
