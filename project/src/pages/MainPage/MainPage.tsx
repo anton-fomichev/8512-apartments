@@ -4,7 +4,7 @@ import { Flex } from '../../components/Flex/Flex';
 import { Footer } from '../../components/Footer/Footer';
 import { Header } from '../../components/Header/Header';
 import { Story } from '../../components/Story/Story';
-import { IMAGES, STORIES } from '../../const';
+import { APARTS, IMAGES, STORIES } from '../../const';
 import { Size } from '../../types/types';
 import styles from './styles.module.css';
 
@@ -22,7 +22,31 @@ export const MainPage = (): JSX.Element => (
             image={IMAGES[0]}
             size={Size.lg}
           />
-          <Aparts size={Size.lg} />
+          <Aparts
+            aparts={APARTS[0]}
+            size={Size.lg}
+            image={IMAGES[1]}
+          />
+          <Aparts
+            aparts={APARTS[0]}
+            size={Size.md}
+            image={IMAGES[1]}
+          />
+          <Aparts
+            aparts={APARTS[0]}
+            size={Size.sm}
+            image={IMAGES[1]}
+          />
+          <Story
+            story={STORIES[0]}
+            image={IMAGES[2]}
+            size={Size.lg}
+          />
+          <Story
+            story={STORIES[0]}
+            image={IMAGES[0]}
+            size={Size.lg}
+          />
         </Flex>
       </Container>
     </main>

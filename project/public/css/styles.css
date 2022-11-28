@@ -106,4 +106,30 @@ a {
 .flex-layout {
   display: flex;
   gap: 160px;
+  flex-wrap: wrap;
+  margin-bottom: 160px;
+}
+
+
+.flex-layout>*:nth-child(6n + 1) {
+  margin-left: 35px;
+}
+
+
+.flex-layout>*:nth-child(6n + 2) {
+  margin-top: 160px;
+}
+
+
+.flex-layout>*:nth-child(6n + 3) {
+  margin-top: 160px;
+}
+
+.flex-layout>*:nth-child(6n + 5) {
+  margin-top: 453px;
+  margin-left: 128px;
+}
+
+.flex-layout>*:nth-child(6n) {
+  margin-left: 160px;
 }

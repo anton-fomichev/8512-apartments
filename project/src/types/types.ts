@@ -15,3 +15,10 @@ export type ImageType = {
   src: string;
   alt: string;
 };
+
+export type ApartsType = {
+  id: number;
+  square: string;
+  type: string;
+  price: number;
+}
