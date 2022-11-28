@@ -1,10 +1,10 @@
-import { Grid } from '../Grid/Grid';
+import { Flex } from '../Flex/Flex';
 import { Link } from '../Link/Link';
 import styles from './styles.module.css';
 
 export const Footer = (): JSX.Element => (
   <footer className={styles.footer}>
-    <Grid>
+    <Flex>
       <ul className={styles['footer__contacts']}>
         <li className={styles['footer__contact']}>
           <Link href='booking@8512apart.com'>booking@8512apart.com</Link>
@@ -24,6 +24,6 @@ export const Footer = (): JSX.Element => (
           <Link href='#'>Instagram</Link>
         </li>
       </ul>
-    </Grid>
+    </Flex>
   </footer>
 );
