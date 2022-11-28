@@ -23,6 +23,7 @@ export const MainPage = (): JSX.Element => (
             story={STORIES[0]}
             image={IMAGES[0]}
             size={Size.lg}
+            button
           />
           <Aparts
             aparts={APARTS[0]}
@@ -43,11 +44,13 @@ export const MainPage = (): JSX.Element => (
             story={STORIES[1]}
             image={IMAGES[2]}
             size={Size.lg}
+            button
           />
           <Story
             story={STORIES[0]}
             image={IMAGES[0]}
             size={Size.lg}
+            button
           />
         </Flex>
       </Container>

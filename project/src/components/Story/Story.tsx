@@ -7,9 +7,10 @@ type StoryProps = {
   story: StoryType;
   image: ImageType;
   size: Size;
+  button?: boolean;
 };
 
-export const Story = ({ story, image, size }: StoryProps): JSX.Element => {
+export const Story = ({ story, image, size, button }: StoryProps): JSX.Element => {
   const totalCount = 2;
   const storyClass = classnames(
     styles.story,
@@ -29,9 +30,10 @@ export const Story = ({ story, image, size }: StoryProps): JSX.Element => {
         </span>
       </div>
       <p className={styles.content}>{story.text}</p>
-      <Button parentClass={styles.button}>
-        Смотреть
-      </Button>
+      {button &&
+        <Button parentClass={styles.button}>
+          Смотреть
+        </Button>}
     </div>
   );
 };
