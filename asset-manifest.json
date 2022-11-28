@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/8512-apartments/static/css/main.31c509ec.css",
-    "main.js": "/8512-apartments/static/js/main.04831696.js",
+    "main.js": "/8512-apartments/static/js/main.86ddee30.js",
     "index.html": "/8512-apartments/index.html",
     "main.31c509ec.css.map": "/8512-apartments/static/css/main.31c509ec.css.map",
-    "main.04831696.js.map": "/8512-apartments/static/js/main.04831696.js.map"
+    "main.86ddee30.js.map": "/8512-apartments/static/js/main.86ddee30.js.map"
   },
   "entrypoints": [
     "static/css/main.31c509ec.css",
-    "static/js/main.04831696.js"
+    "static/js/main.86ddee30.js"
   ]
 }
