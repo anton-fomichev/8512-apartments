@@ -1,25 +1,25 @@
-import { Link } from '../Link/Link';
+import { LinkElement } from '../Link/Link';
 import styles from './styles.module.css';
 
 export const Footer = (): JSX.Element => (
   <footer className={styles.footer}>
     <ul className={styles['footer__contacts']}>
       <li className={styles['footer__contact']}>
-        <Link href='booking@8512apart.com'>booking@8512apart.com</Link>
+        <LinkElement href='booking@8512apart.com'>booking@8512apart.com</LinkElement>
       </li>
       <li className={styles['footer__contact']}>
-        <Link href='tel:+79275881588'>+7 927 588 1 588</Link>
+        <LinkElement href='tel:+79275881588'>+7 927 588 1 588</LinkElement>
       </li>
       <li className={styles['footer__contact']}>
-        <Link href='#'>Оплата</Link>
+        <LinkElement href='#'>Оплата</LinkElement>
       </li>
     </ul>
     <ul className={styles['footer__links']}>
       <li className={styles['footer__link']}>
-        <Link href='#'>Политика Конфиденциальности и Cookies</Link>
+        <LinkElement href='#'>Политика Конфиденциальности и Cookies</LinkElement>
       </li>
       <li className={styles['footer__link']}>
-        <Link href='#'>Instagram</Link>
+        <LinkElement href='#'>Instagram</LinkElement>
       </li>
     </ul>
   </footer>

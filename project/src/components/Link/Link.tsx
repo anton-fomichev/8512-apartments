@@ -5,6 +5,6 @@ type LinkProps = {
   href: string;
 };
 
-export const Link = ({ children, href }: LinkProps): JSX.Element => (
+export const LinkElement = ({ children, href }: LinkProps): JSX.Element => (
   <a className='link' href={href}>{children}</a>
 );

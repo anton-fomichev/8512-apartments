@@ -1,7 +1,7 @@
 import { ApartsType, ImageType, Size } from '../../types/types';
 import styles from './styles.module.css';
 import classnames from 'classnames';
-import { Link } from '../Link/Link';
+import { LinkElement } from '../Link/Link';
 
 type ApartsProps = {
   aparts: ApartsType;
@@ -25,9 +25,9 @@ export const Aparts = ({ aparts, image, size }: ApartsProps): JSX.Element => {
       </div>
       <div className={styles['aparts__info']}>
         <div className={styles.square}>
-          <Link href='#'>
+          <LinkElement href='#'>
             {aparts.type} {aparts.square} м2
-          </Link>
+          </LinkElement>
         </div>
         <div className={styles.price}>
           От <span>2200</span> ₽/ день

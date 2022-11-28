@@ -1,4 +1,4 @@
-import { Link } from '../Link/Link';
+import { LinkElement } from '../Link/Link';
 import { Option } from '../Option/Option';
 import styles from './styles.module.css';
 
@@ -24,6 +24,6 @@ export const BookMenu = (): JSX.Element => (
         />
       </li>
     </ul>
-    <Link href="#">Бронировать</Link>
+    <LinkElement href="#">Бронировать</LinkElement>
   </div>
 );
