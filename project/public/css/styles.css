@@ -48,6 +48,11 @@ body {
   padding: 0;
 }
 
+.container {
+  margin: 0 auto;
+  max-width: 1555px;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -74,4 +79,9 @@ a {
   justify-content: center;
   font-size: 0.8em;
   height: 50px;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 160px 160px 1fr;
 }

@@ -23,3 +23,9 @@ button {
   /* Corrects inability to style clickable `input` types in iOS */
   -webkit-appearance: none;
 }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
