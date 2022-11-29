@@ -1,0 +1,23 @@
+.book-menu {
+  position: fixed;
+  z-index: 5;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--gray);
+  border-radius: 1em;
+  min-width: 578px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.options {
+  display: flex;
+  gap: 1em;
+}
+
+.options__item {
+  line-height: 1;
+}

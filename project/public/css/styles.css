@@ -1,0 +1,135 @@
+@import url(./defaults.css);
+
+:root {
+  --black: #000000;
+  --gray: rgba(232, 232, 232, 0.8);
+  --white: #FFFFFF;
+}
+
+/* FONT */
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-Regular.eot');
+  src: local('Inter Regular'), local('Inter-Regular'),
+    url('../fonts/Inter-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Inter-Regular.woff2') format('woff2'),
+    url('../fonts/Inter-Regular.woff') format('woff'),
+    url('../fonts/Inter-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-Italic.eot');
+  src: local('Inter Italic'), local('Inter-Italic'),
+    url('../fonts/Inter-Italic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Inter-Italic.woff2') format('woff2'),
+    url('../fonts/Inter-Italic.woff') format('woff'),
+    url('../fonts/Inter-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  letter-spacing: -0.02rem;
+  color: var(--black);
+  line-height: 1.1875;
+  background-color: var(--white);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1595px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* Link */
+.link {
+  font-size: 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.link::after {
+  content: '↘';
+}
+
+/* Button */
+.button {
+  background-color: var(--gray);
+  border-radius: 25px;
+  cursor: pointer;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8em;
+  height: 50px;
+}
+
+/* Grid */
+.flex-layout {
+  display: flex;
+  gap: 160px;
+  flex-wrap: wrap;
+  margin-bottom: 160px;
+}
+
+
+.flex-layout>*:nth-child(6n + 1) {
+  margin-left: 35px;
+}
+
+
+.flex-layout>*:nth-child(6n + 2) {
+  margin-top: 160px;
+}
+
+
+.flex-layout>*:nth-child(6n + 3) {
+  margin-top: 160px;
+}
+
+.flex-layout>*:nth-child(6n + 5) {
+  margin-top: 453px;
+  margin-left: 128px;
+}
+
+.flex-layout>*:nth-child(6n) {
+  margin-left: 160px;
+}
