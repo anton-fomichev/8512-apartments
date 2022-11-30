@@ -1,7 +1,7 @@
 .book-menu {
   position: fixed;
   z-index: 5;
-  bottom: 80px;
+  bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--gray);
@@ -11,6 +11,8 @@
   display: flex;
   justify-content: space-between;
   padding: 24px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .options {

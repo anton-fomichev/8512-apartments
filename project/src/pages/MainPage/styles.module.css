@@ -2,8 +2,17 @@
   padding-top: 60px;
 }
 
+.content {
+  margin-bottom: 160px;
+}
+
 .info {
-  max-width: 532px;
   margin-bottom: 80px;
-  margin-left: 35px;
+}
+
+@media (min-width: 700px) {
+  .info {
+    max-width: 532px;
+    margin-left: 35px;
+  }
 }
