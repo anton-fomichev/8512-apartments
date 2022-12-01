@@ -16,6 +16,7 @@ export const Story = ({ story, image, size, button }: StoryProps): JSX.Element =
     styles.story,
     {
       [styles['story--sm']]: size === Size.sm,
+      [styles['story--md']]: size === Size.md,
       [styles['story--lg']]: size === Size.lg,
     },
   );

@@ -18,7 +18,10 @@ export const MagazineLayout = ({ children, parentClass = '' }: MagazineLayoutPro
     const magazineLayoutElement: HTMLElement | null = document.querySelector('.magazine-layout');
     if (magazineLayoutElement) {
       const elementWidth: number = magazineLayoutElement.offsetWidth;
-      magazineLayoutElement.style.height = `${elementWidth * 1.79356913183}px`;
+      if (elementWidth > 700) {
+        magazineLayoutElement.style.height = `${elementWidth * 1.79356913183}px`;
+      }
+
     }
   }, []);
   return (

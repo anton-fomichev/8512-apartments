@@ -1,4 +1,9 @@
 @media (min-width: 700px) {
+  .container {
+    margin: 0 auto;
+    max-width: 1635px;
+    padding: 0px 40px;
+  }
 
   /* Magazine layout */
   .magazine-layout {
@@ -35,4 +40,27 @@
     grid-area: 10 / 3 / span 2 / span 2;
   }
 
+}
+
+@media (max-width: 700px) {
+  .container {
+    max-width: 1595px;
+    padding: 0px 20px;
+  }
+
+  /* Magazine layout */
+  .magazine-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .magazine-layout>*:nth-child(6n + 1) {
+    margin-bottom: 40px;
+  }
+
+  .magazine-layout>*:nth-child(6n + 3) {
+    align-self: flex-end;
+    width: 66%;
+  }
 }

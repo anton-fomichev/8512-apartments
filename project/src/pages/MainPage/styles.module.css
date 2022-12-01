@@ -10,6 +10,11 @@
   margin-bottom: 80px;
 }
 
+.slider {
+  margin-bottom: 80px;
+}
+
+
 @media (min-width: 700px) {
   .info {
     max-width: 532px;

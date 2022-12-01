@@ -14,7 +14,6 @@ export const Aparts = ({ aparts, image, size }: ApartsProps): JSX.Element => {
     styles['aparts__img'],
     {
       [styles['aparts--sm']]: size === Size.sm,
-      [styles['aparts--md']]: size === Size.md,
       [styles['aparts--lg']]: size === Size.lg,
     },
   );
