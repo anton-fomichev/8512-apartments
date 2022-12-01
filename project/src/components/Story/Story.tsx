@@ -2,15 +2,17 @@ import { ImageType, Size, StoryType } from '../../types/types';
 import { Button } from '../Button/Button';
 import styles from './styles.module.css';
 import classnames from 'classnames';
+import { getItemFromItById } from '../../utils';
 
 type StoryProps = {
   story: StoryType;
-  image: ImageType;
+  images: ImageType[];
   size: Size;
   button?: boolean;
 };
 
-export const Story = ({ story, image, size, button }: StoryProps): JSX.Element => {
+export const Story = ({ story, images, size, button }: StoryProps): JSX.Element => {
+  const image = getItemFromItById(images, story.imageId);
   const totalCount = 2;
   const storyClass = classnames(
     styles.story,
@@ -22,7 +24,7 @@ export const Story = ({ story, image, size, button }: StoryProps): JSX.Element =
   );
   return (
     <div className={storyClass}>
-      <img className={styles['story__img']} src={image.src} alt={image.alt} />
+      <img className={styles['story__img']} src={image?.src} alt={image?.alt} />
       <div className={styles['story__navigation']}>
         <span className={styles.this}>01</span>
         <span className="visually-hidden">из</span>

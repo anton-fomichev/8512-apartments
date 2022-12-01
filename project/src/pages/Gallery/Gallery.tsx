@@ -11,17 +11,17 @@ export const Gallery = (): JSX.Element => (
     <div className={styles.gallery}>
       <Story
         story={STORIES[1]}
-        image={IMAGES[2]}
+        images={IMAGES}
         size={Size.lg}
       />
       <Story
         story={STORIES[0]}
-        image={IMAGES[0]}
+        images={IMAGES}
         size={Size.sm}
       />
       <Story
         story={STORIES[1]}
-        image={IMAGES[2]}
+        images={IMAGES}
         size={Size.sm}
       />
     </div>

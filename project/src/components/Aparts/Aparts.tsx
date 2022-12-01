@@ -2,14 +2,16 @@ import { ApartsType, ImageType, Size } from '../../types/types';
 import styles from './styles.module.css';
 import classnames from 'classnames';
 import { LinkElement } from '../Link/Link';
+import { getItemFromItById } from '../../utils';
 
 type ApartsProps = {
   aparts: ApartsType;
-  image: ImageType;
+  images: ImageType[];
   size: Size;
 };
 
-export const Aparts = ({ aparts, image, size }: ApartsProps): JSX.Element => {
+export const Aparts = ({ aparts, images, size }: ApartsProps): JSX.Element => {
+  const image = getItemFromItById(images, aparts.imageId);
   const imgClass = classnames(
     styles['aparts__img'],
     {
@@ -19,7 +21,7 @@ export const Aparts = ({ aparts, image, size }: ApartsProps): JSX.Element => {
   );
   return (
     <div className={styles.aparts}>
-      <img className={imgClass} src={image.src} alt={image.alt} />
+      <img className={imgClass} src={image?.src} alt={image?.alt} />
       <div className={styles['aparts__info']}>
         <div className={styles.square}>
           <LinkElement href='#'>

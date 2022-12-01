@@ -21,4 +21,5 @@ export type ApartsType = {
   square: string;
   type: string;
   price: number;
+  imageId: number;
 }

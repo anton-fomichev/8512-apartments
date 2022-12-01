@@ -124,3 +124,7 @@ a {
   width: 2000px;
   gap: 20px;
 }
+
+.transparent {
+  opacity: 0;
+}

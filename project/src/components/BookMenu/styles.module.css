@@ -16,6 +16,7 @@
   max-width: 578px;
   left: 50%;
   transform: translateX(-50%);
+  transition: opacity 0.2s ease;
 }
 
 .options {

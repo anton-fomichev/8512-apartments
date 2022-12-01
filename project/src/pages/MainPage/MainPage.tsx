@@ -36,7 +36,7 @@ export const MainPage = (): JSX.Element => {
               </h2>
               <Story
                 story={STORIES[0]}
-                image={IMAGES[0]}
+                images={IMAGES}
                 size={Size.lg}
                 button
               />
@@ -48,21 +48,21 @@ export const MainPage = (): JSX.Element => {
               <Aparts
                 aparts={APARTS[0]}
                 size={Size.lg}
-                image={IMAGES[1]}
+                images={IMAGES}
               />
             </Article>
             <Article>
               <Aparts
-                aparts={APARTS[0]}
+                aparts={APARTS[1]}
                 size={Size.sm}
-                image={IMAGES[1]}
+                images={IMAGES}
               />
             </Article>
             <Article>
               <Aparts
-                aparts={APARTS[0]}
+                aparts={APARTS[2]}
                 size={Size.lg}
-                image={IMAGES[1]}
+                images={IMAGES}
               />
             </Article>
 
@@ -74,7 +74,7 @@ export const MainPage = (): JSX.Element => {
                   </h2>
                   <Story
                     story={STORIES[0]}
-                    image={IMAGES[0]}
+                    images={IMAGES}
                     size={Size.lg}
                     button
                   />
@@ -82,7 +82,7 @@ export const MainPage = (): JSX.Element => {
                 <Article>
                   <Story
                     story={STORIES[1]}
-                    image={IMAGES[2]}
+                    images={IMAGES}
                     size={Size.lg}
                     button
                   />
@@ -96,7 +96,7 @@ export const MainPage = (): JSX.Element => {
             <Article>
               <Story
                 story={STORIES[0]}
-                image={IMAGES[0]}
+                images={IMAGES}
                 size={Size.md}
                 button
               />
@@ -104,7 +104,7 @@ export const MainPage = (): JSX.Element => {
             <Article>
               <Story
                 story={STORIES[1]}
-                image={IMAGES[2]}
+                images={IMAGES}
                 size={Size.md}
                 button
               />

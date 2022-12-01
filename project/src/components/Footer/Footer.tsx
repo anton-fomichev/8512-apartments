@@ -1,8 +1,9 @@
 import { LinkElement } from '../Link/Link';
 import styles from './styles.module.css';
+import classnames from 'classnames';
 
 export const Footer = (): JSX.Element => (
-  <footer className={styles.footer}>
+  <footer className={classnames(styles.footer, 'footer')}>
     <ul className={styles['footer__contacts']}>
       <li className={styles['footer__contact']}>
         <LinkElement href='booking@8512apart.com'>booking@8512apart.com</LinkElement>

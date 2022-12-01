@@ -24,11 +24,11 @@
   }
 
 
-  .magazine-layout>*:nth-child(6n + 3) {
+  .magazine-layout>*:nth-child(6n + 4) {
     grid-area: 6 / 1 / span 2 / span 6;
   }
 
-  .magazine-layout>*:nth-child(6n + 4) {
+  .magazine-layout>*:nth-child(6n + 3) {
     grid-area: 5 / 8 / span 2 / span 2;
   }
 
