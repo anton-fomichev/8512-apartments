@@ -10,9 +10,10 @@ type StoryProps = {
   size?: Size;
   button?: boolean;
   className?: string;
+  handleClick?: (route: string) => void;
 };
 
-export const Story = ({ story, images, size = Size.auto, button, className = '' }: StoryProps): JSX.Element => {
+export const Story = ({ story, images, size = Size.auto, button, className = '', handleClick }: StoryProps): JSX.Element => {
   const image = getItemFromItById(images, story.imageId);
   const totalCount = 2;
   const storyClass = classnames(
@@ -21,11 +22,11 @@ export const Story = ({ story, images, size = Size.auto, button, className = '' 
       [styles['story--sm']]: size === Size.sm,
       [styles['story--md']]: size === Size.md,
       [styles['story--lg']]: size === Size.lg,
-      [className]: className,
+      [className]: className.length > 0,
     },
   );
   return (
-    <div className={storyClass}>
+    <div className={storyClass} onClick={() => handleClick && handleClick('/gallery')}>
       <img className={styles['story__img']} src={image?.src} alt={image?.alt} />
       <div className={styles['story__navigation']}>
         <span className={styles.this}>01</span>
@@ -36,7 +37,7 @@ export const Story = ({ story, images, size = Size.auto, button, className = '' 
       </div>
       <p className={styles.content}>{story.text}</p>
       {button &&
-        <Button parentClass={styles.button}>
+        <Button className={styles.button}>
           Смотреть
         </Button>}
     </div>

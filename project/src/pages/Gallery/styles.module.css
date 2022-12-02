@@ -6,36 +6,50 @@
 }
 
 .button {
-  margin-bottom: 83px;
+  margin-bottom: 7.68vh;
 }
 
 .gallery {
   max-height: 583px;
   height: 54vh;
   width: 100%;
+  margin-bottom: 11.2vh;
 }
 
 .story-slide {
   max-width: 42.6vh;
 }
 
+.book-menu {
+  position: relative !important;
+  bottom: unset !important;
+}
+
 @media screen and (max-width: 700px) {
   .button {
-    justify-self: flex-end;
     margin-bottom: 1rem;
+    margin-top: auto;
+  }
+
+  .gallery {
+    height: 48.5vh;
+    margin-bottom: 1rem;
+  }
+
+  .story-slide {
+    max-width: 38.2vh;
   }
 
   .main-gallery {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
   }
 
-  /* .book-menu {
-    position: relative !important;
-    bottom: unset !important;
+  .book-menu {
+    margin-top: auto;
     left: unset !important;
     transform: unset !important;
-    margin-top: 20px;
-  } */
+  }
 }

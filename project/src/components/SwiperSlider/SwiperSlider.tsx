@@ -26,7 +26,7 @@ type SwiperSliderProps = {
 
 export const SwiperSlider = ({ slides, className = '', sliderSlideClass, options }: SwiperSliderProps): JSX.Element => (
   <Swiper
-    className={classnames({ [className]: className }, 'swiper--8512-apartments')}
+    className={classnames({ [className]: className.length > 0 }, 'swiper--8512-apartments')}
     modules={[Autoplay, Keyboard, Mousewheel, EffectCoverflow]}
     spaceBetween={40}
     slidesPerView={'auto'}
