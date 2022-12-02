@@ -4,7 +4,12 @@ import styles from './styles.module.css';
 import { useEffect, useState, useRef } from 'react';
 import classnames from 'classnames';
 
-export const BookMenu = (): JSX.Element => {
+type BookMenuProps = {
+  hiddable?: boolean;
+  className?: string;
+}
+
+export const BookMenu = ({ hiddable, className }: BookMenuProps): JSX.Element => {
   const [offset, setOffset] = useState(0);
   const bookMenuEl = useRef<HTMLDivElement>(null);
 
@@ -23,9 +28,10 @@ export const BookMenu = (): JSX.Element => {
   });
 
   const bookMenuClass = classnames(
+    className,
     styles['book-menu'],
     {
-      'transparent': offset <= 5,
+      'transparent': offset <= 5 && hiddable,
     }
   );
 

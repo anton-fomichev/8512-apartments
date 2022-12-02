@@ -2,7 +2,6 @@
   color: var(--white);
   position: relative;
   padding: 1em;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

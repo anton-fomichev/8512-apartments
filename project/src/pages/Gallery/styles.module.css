@@ -1,18 +1,41 @@
 .main-gallery {
-  padding: 20px;
-  text-align: center;
+  padding: 20px 0;
   height: 100vh;
-  overflow: hidden;
-}
-
-.gallery {
-  width: 2000px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-left: calc(50% - 230px);
+  width: 100%;
+  text-align: center;
 }
 
 .button {
   margin-bottom: 83px;
+}
+
+.gallery {
+  max-height: 583px;
+  height: 54vh;
+  width: 100%;
+}
+
+.story-slide {
+  max-width: 42.6vh;
+}
+
+@media screen and (max-width: 700px) {
+  .button {
+    justify-self: flex-end;
+    margin-bottom: 1rem;
+  }
+
+  .main-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* .book-menu {
+    position: relative !important;
+    bottom: unset !important;
+    left: unset !important;
+    transform: unset !important;
+    margin-top: 20px;
+  } */
 }

@@ -9,7 +9,7 @@ import { APARTS, IMAGES, STORIES } from '../../const';
 import { Size } from '../../types/types';
 import styles from './styles.module.css';
 import { Article } from '../../components/Article/Article';
-import { Slider } from '../../components/Slider/Slider';
+import { SwiperSlider } from '../../components/SwiperSlider/SwiperSlider';
 import { useState, useEffect } from 'react';
 
 export const MainPage = (): JSX.Element => {
@@ -25,7 +25,7 @@ export const MainPage = (): JSX.Element => {
       <main className={styles['main-home']}>
 
         <Container>
-          <BookMenu />
+          <BookMenu hiddable />
           <p className={styles.info}>
             Lorem ipsum dolor sit amet consectetur. Id lorem facilisi id scelerisque parturient magna dolor. Tincidunt feugiat massa lacus sit vitae porttitor.
           </p>
@@ -92,24 +92,21 @@ export const MainPage = (): JSX.Element => {
 
         </Container>
         {isMobile &&
-          <Slider parentClass={styles.slider}>
-            <Article>
-              <Story
-                story={STORIES[0]}
-                images={IMAGES}
-                size={Size.md}
-                button
+
+          <Article>
+            <Container>
+              <h2 className={'article__heading'}>
+                Больше историй
+              </h2>
+              <SwiperSlider
+                className={styles.slider}
+                slides={STORIES}
+                sliderSlideClass={styles['slider-slide']}
+                options={{ centeredSlides: false }}
               />
-            </Article>
-            <Article>
-              <Story
-                story={STORIES[1]}
-                images={IMAGES}
-                size={Size.md}
-                button
-              />
-            </Article>
-          </Slider>}
+            </Container>
+
+          </Article>}
       </main>
       <Footer />
     </>

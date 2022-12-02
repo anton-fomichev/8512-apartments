@@ -1,7 +1,8 @@
 export enum Size {
   sm,
   md,
-  lg
+  lg,
+  auto
 }
 
 export type StoryType = {

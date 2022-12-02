@@ -7,11 +7,12 @@ import { getItemFromItById } from '../../utils';
 type StoryProps = {
   story: StoryType;
   images: ImageType[];
-  size: Size;
+  size?: Size;
   button?: boolean;
+  className?: string;
 };
 
-export const Story = ({ story, images, size, button }: StoryProps): JSX.Element => {
+export const Story = ({ story, images, size = Size.auto, button, className = '' }: StoryProps): JSX.Element => {
   const image = getItemFromItById(images, story.imageId);
   const totalCount = 2;
   const storyClass = classnames(
@@ -20,6 +21,7 @@ export const Story = ({ story, images, size, button }: StoryProps): JSX.Element 
       [styles['story--sm']]: size === Size.sm,
       [styles['story--md']]: size === Size.md,
       [styles['story--lg']]: size === Size.lg,
+      [className]: className,
     },
   );
   return (

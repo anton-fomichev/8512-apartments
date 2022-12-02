@@ -14,6 +14,11 @@
   margin-bottom: 80px;
 }
 
+.slider-slide {
+  max-width: 76vw;
+  height: 95vw;
+}
+
 
 @media (min-width: 700px) {
   .info {
