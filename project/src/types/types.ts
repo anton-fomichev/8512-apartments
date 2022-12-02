@@ -1,7 +1,8 @@
 export enum Size {
   sm,
   md,
-  lg
+  lg,
+  auto
 }
 
 export type StoryType = {
@@ -21,4 +22,5 @@ export type ApartsType = {
   square: string;
   type: string;
   price: number;
+  imageId: number;
 }

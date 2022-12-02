@@ -1,39 +1,32 @@
 .aparts {
   font-size: 16px;
   cursor: pointer;
-}
-
-.aparts__img-wrapper {
-  position: relative;
-  margin-bottom: 10px;
-}
-
-.aparts--sm {
-  width: 646px;
-  height: 402px;
-}
-
-.aparts--md {
-  width: 746px;
-  height: 427px;
-}
-
-.aparts--lg {
-  width: 900px;
-  height: 542px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .aparts__img {
-  position: absolute;
+  display: block;
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
   background-color: var(--gray);
+  margin-bottom: 10px;
+  object-fit: cover;
 }
 
 .aparts__info {
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  gap: 60px;
+}
+
+.square {
+  word-wrap: break-word;
+}
+
+.price {
+  word-wrap: break-word;
 }

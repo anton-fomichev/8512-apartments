@@ -1,4 +1,5 @@
 @import url(./defaults.css);
+@import url(./media.css);
 
 :root {
   --black: #000000;
@@ -50,13 +51,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.container {
-  margin: 0 auto;
-  max-width: 1595px;
-  padding-right: 20px;
-  padding-left: 20px;
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -75,12 +69,24 @@ a {
   overflow: hidden;
 }
 
+/* Article */
+.article {
+  height: 100%;
+}
+
+.article__heading {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: inherit;
+  margin-bottom: 1.5rem;
+}
+
 /* Link */
 .link {
   font-size: 16px;
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 5px;
 }
 
@@ -102,34 +108,13 @@ a {
   height: 50px;
 }
 
-/* Grid */
-.flex-layout {
-  display: flex;
-  gap: 160px;
-  flex-wrap: wrap;
-  margin-bottom: 160px;
+.transparent {
+  opacity: 0;
+  transform: translate(9999px) !important;
 }
 
-
-.flex-layout>*:nth-child(6n + 1) {
-  margin-left: 35px;
-}
-
-
-.flex-layout>*:nth-child(6n + 2) {
-  margin-top: 160px;
-}
-
-
-.flex-layout>*:nth-child(6n + 3) {
-  margin-top: 160px;
-}
-
-.flex-layout>*:nth-child(6n + 5) {
-  margin-top: 453px;
-  margin-left: 128px;
-}
-
-.flex-layout>*:nth-child(6n) {
-  margin-left: 160px;
+.swiper--8512-apartments {
+  width: 100%;
+  height: 100%;
+  max-width: 1920px;
 }

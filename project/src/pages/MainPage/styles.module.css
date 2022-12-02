@@ -2,8 +2,27 @@
   padding-top: 60px;
 }
 
+.content {
+  margin-bottom: 160px;
+}
+
 .info {
-  max-width: 532px;
   margin-bottom: 80px;
-  margin-left: 35px;
+}
+
+.slider {
+  margin-bottom: 80px;
+}
+
+.slider-slide {
+  max-width: 76vw;
+  height: 95vw;
+}
+
+
+@media (min-width: 700px) {
+  .info {
+    max-width: 532px;
+    margin-left: 35px;
+  }
 }
