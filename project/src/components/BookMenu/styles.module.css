@@ -1,7 +1,7 @@
 .book-menu {
   position: fixed;
   z-index: 5;
-  bottom: 5%;
+  bottom: 20px;
   cursor: pointer;
   display: flex;
   justify-content: space-around;

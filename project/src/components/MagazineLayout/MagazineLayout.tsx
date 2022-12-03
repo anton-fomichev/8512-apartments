@@ -3,14 +3,14 @@ import classnames from 'classnames';
 
 type MagazineLayoutProps = {
   children: ReactNode;
-  parentClass?: string;
+  className?: string;
 }
 
-export const MagazineLayout = ({ children, parentClass = '' }: MagazineLayoutProps): JSX.Element => {
-  const className = classnames(
+export const MagazineLayout = ({ children, className = '' }: MagazineLayoutProps): JSX.Element => {
+  const magazineLayoutClass = classnames(
     {
       'magazine-layout': true,
-      [parentClass]: parentClass.length > 0,
+      [className]: className.length > 0,
     }
   );
 
@@ -25,7 +25,7 @@ export const MagazineLayout = ({ children, parentClass = '' }: MagazineLayoutPro
     }
   }, []);
   return (
-    <div className={className}>
+    <div className={magazineLayoutClass}>
       {children}
     </div>
   );

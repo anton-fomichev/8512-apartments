@@ -4,18 +4,19 @@ import classnames from 'classnames';
 type ButtonProps = {
   children: ReactNode;
   type?: 'button' | 'submit';
-  parentClass?: string;
+  className?: string;
+  handleClick?: () => void;
 };
 
-export const Button = ({ children, type = 'button', parentClass = '' }: ButtonProps): JSX.Element => {
+export const Button = ({ children, type = 'button', className = '', handleClick }: ButtonProps): JSX.Element => {
   const btnClass = classnames(
     {
       'button': true,
-      [parentClass]: parentClass.length > 0,
+      [className]: className.length > 0,
     }
   );
   return (
-    <button className={btnClass} type={type}>
+    <button className={btnClass} type={type} onClick={handleClick}>
       {children}
     </button>
   );

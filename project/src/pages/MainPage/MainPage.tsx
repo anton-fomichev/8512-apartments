@@ -10,10 +10,17 @@ import { Size } from '../../types/types';
 import styles from './styles.module.css';
 import { Article } from '../../components/Article/Article';
 import { SwiperSlider } from '../../components/SwiperSlider/SwiperSlider';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const MainPage = (): JSX.Element => {
   const [isMobile, setIsMobile] = useState(false);
+  const navigate = useNavigate();
+  const onStoryClick = useCallback(
+    (route: string): void => {
+      navigate(route);
+    }, [navigate]
+  );
 
   useEffect(() => {
     const width: number = document.body.offsetWidth;
@@ -29,16 +36,18 @@ export const MainPage = (): JSX.Element => {
           <p className={styles.info}>
             Lorem ipsum dolor sit amet consectetur. Id lorem facilisi id scelerisque parturient magna dolor. Tincidunt feugiat massa lacus sit vitae porttitor.
           </p>
-          <MagazineLayout parentClass={styles.content}>
+          <MagazineLayout className={styles.content}>
             <Article>
               <h2 className={'article__heading'}>
                 Истории
               </h2>
               <Story
+                handleClick={onStoryClick}
                 story={STORIES[0]}
                 images={IMAGES}
                 size={Size.lg}
                 button
+                className={styles.story}
               />
             </Article>
             <Article>
@@ -46,23 +55,29 @@ export const MainPage = (): JSX.Element => {
                 Апартаменты
               </h2>
               <Aparts
+                handleClick={onStoryClick}
                 aparts={APARTS[0]}
                 size={Size.lg}
                 images={IMAGES}
+                className={styles.aparts}
               />
             </Article>
             <Article>
               <Aparts
+                handleClick={onStoryClick}
                 aparts={APARTS[1]}
                 size={Size.sm}
                 images={IMAGES}
+                className={styles.aparts}
               />
             </Article>
             <Article>
               <Aparts
+                handleClick={onStoryClick}
                 aparts={APARTS[2]}
                 size={Size.lg}
                 images={IMAGES}
+                className={styles.aparts}
               />
             </Article>
 
@@ -73,18 +88,22 @@ export const MainPage = (): JSX.Element => {
                     Больше историй
                   </h2>
                   <Story
+                    handleClick={onStoryClick}
                     story={STORIES[0]}
                     images={IMAGES}
                     size={Size.lg}
                     button
+                    className={styles.aparts}
                   />
                 </Article>
                 <Article>
                   <Story
+                    handleClick={onStoryClick}
                     story={STORIES[1]}
                     images={IMAGES}
                     size={Size.lg}
                     button
+                    className={styles.aparts}
                   />
                 </Article>
               </>}
@@ -99,6 +118,7 @@ export const MainPage = (): JSX.Element => {
                 Больше историй
               </h2>
               <SwiperSlider
+                handleClick={onStoryClick}
                 className={styles.slider}
                 slides={STORIES}
                 sliderSlideClass={styles['slider-slide']}

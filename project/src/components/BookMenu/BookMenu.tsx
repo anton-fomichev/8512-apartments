@@ -9,8 +9,8 @@ type BookMenuProps = {
   className?: string;
 }
 
-export const BookMenu = ({ hiddable, className }: BookMenuProps): JSX.Element => {
-  const [offset, setOffset] = useState(0);
+export const BookMenu = ({ hiddable, className = '' }: BookMenuProps): JSX.Element => {
+  const [offset, setOffset] = useState(window.innerHeight);
   const bookMenuEl = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -25,12 +25,12 @@ export const BookMenu = ({ hiddable, className }: BookMenuProps): JSX.Element =>
       return () => window.removeEventListener('scroll', onScroll);
     }
 
-  });
+  }, []);
 
   const bookMenuClass = classnames(
-    className,
     styles['book-menu'],
     {
+      [className]: className.length > 0,
       'transparent': offset <= 5 && hiddable,
     }
   );

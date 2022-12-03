@@ -14,6 +14,14 @@
   margin-bottom: 80px;
 }
 
+.aparts {
+  cursor: pointer;
+}
+
+.story {
+  cursor: pointer;
+}
+
 .slider-slide {
   max-width: 76vw;
   height: 95vw;

@@ -5,6 +5,7 @@ export const STORIES: StoryType[] = [
     id: 1,
     text: 'Комфорт апартаментов',
     imageId: 1,
+
   },
   {
     id: 2,

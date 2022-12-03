@@ -22,13 +22,14 @@ type SwiperSliderProps = {
   options?: {
     centeredSlides?: boolean;
   };
+  handleClick?: (route: string) => void;
 };
 
-export const SwiperSlider = ({ slides, className = '', sliderSlideClass, options }: SwiperSliderProps): JSX.Element => (
+export const SwiperSlider = ({ slides, className = '', sliderSlideClass, options, handleClick }: SwiperSliderProps): JSX.Element => (
   <Swiper
-    className={classnames({ [className]: className }, 'swiper--8512-apartments')}
+    className={classnames({ [className]: className.length > 0 }, 'swiper--8512-apartments')}
     modules={[Autoplay, Keyboard, Mousewheel, EffectCoverflow]}
-    spaceBetween={40}
+    spaceBetween={20}
     slidesPerView={'auto'}
     autoplay={{ delay: 5000 }}
     centeredSlides={options && (options.centeredSlides || false)}
@@ -36,16 +37,14 @@ export const SwiperSlider = ({ slides, className = '', sliderSlideClass, options
     mousewheel
     grabCursor
     effect='coverflow'
-    coverflowEffect={{ depth: 108, rotate: 0, slideShadows: false }}
+    coverflowEffect={{ depth: 0, rotate: 0, slideShadows: false, }}
     roundLengths
-    breakpoints={{
-
-    }}
   >
     {
       slides.map((slide) => (
         <SwiperSlide className={sliderSlideClass} key={nextId()}>
           <Story
+            handleClick={() => handleClick && handleClick('/gallery')}
             story={slide}
             images={IMAGES}
           />

@@ -8,19 +8,22 @@ type ApartsProps = {
   aparts: ApartsType;
   images: ImageType[];
   size: Size;
+  handleClick?: (route: string) => void;
+  className?: string;
 };
 
-export const Aparts = ({ aparts, images, size }: ApartsProps): JSX.Element => {
+export const Aparts = ({ aparts, images, size, handleClick, className = '' }: ApartsProps): JSX.Element => {
   const image = getItemFromItById(images, aparts.imageId);
   const imgClass = classnames(
     styles['aparts__img'],
     {
+      [className]: className.length > 0,
       [styles['aparts--sm']]: size === Size.sm,
       [styles['aparts--lg']]: size === Size.lg,
     },
   );
   return (
-    <div className={styles.aparts}>
+    <div className={styles.aparts} onClick={() => handleClick && handleClick('/gallery')}>
       <img className={imgClass} src={image?.src} alt={image?.alt} />
       <div className={styles['aparts__info']}>
         <div className={styles.square}>

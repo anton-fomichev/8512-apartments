@@ -84,14 +84,10 @@ a {
 /* Link */
 .link {
   font-size: 16px;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  gap: 5px;
 }
 
-.link::after {
-  content: '↘';
+.link__icon:before {
+  content: "\A0";
 }
 
 /* Button */
