@@ -118,6 +118,7 @@ export const MainPage = (): JSX.Element => {
                 Больше историй
               </h2>
               <SwiperSlider
+                handleClick={onStoryClick}
                 className={styles.slider}
                 slides={STORIES}
                 sliderSlideClass={styles['slider-slide']}
