@@ -41,7 +41,7 @@ export const APARTS: ApartsType[] = [
 export const IMAGES: ImageType[] = [
   {
     id: 1,
-    src: 'img/story-1.jpg',
+    src: 'img/story-1.mp4',
     alt: 'Девушка на мягкой кровати с пультом',
   },
   {

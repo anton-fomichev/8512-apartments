@@ -42,6 +42,7 @@ export const MainPage = (): JSX.Element => {
                 Истории
               </h2>
               <Story
+                autoPlay
                 handleClick={onStoryClick}
                 story={STORIES[0]}
                 images={IMAGES}

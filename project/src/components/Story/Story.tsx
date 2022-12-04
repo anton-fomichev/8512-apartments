@@ -11,9 +11,11 @@ type StoryProps = {
   button?: boolean;
   className?: string;
   handleClick?: (route: string) => void;
+  loop?: boolean;
+  autoPlay?: boolean;
 };
 
-export const Story = ({ story, images, size = Size.auto, button, className = '', handleClick }: StoryProps): JSX.Element => {
+export const Story = ({ story, images, size = Size.auto, button, className = '', handleClick, loop = true, autoPlay = false }: StoryProps): JSX.Element => {
   const image = getItemFromItById(images, story.imageId);
   const totalCount = 2;
   const storyClass = classnames(
@@ -27,7 +29,9 @@ export const Story = ({ story, images, size = Size.auto, button, className = '',
   );
   return (
     <div className={storyClass} onClick={() => handleClick && handleClick('/gallery')}>
-      <img className={styles['story__img']} src={image?.src} alt={image?.alt} />
+      {image?.src.slice(image?.src.indexOf('.') + 1) === 'mp4' ?
+        <video className={styles['story__img']} src={image?.src} loop={loop} muted autoPlay={autoPlay} /> : <img className={styles['story__img']} src={image?.src} alt={image?.alt} />}
+
       <div className={styles['story__navigation']}>
         <span className={styles.this}>01</span>
         <span className="visually-hidden">из</span>
