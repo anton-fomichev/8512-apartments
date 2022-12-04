@@ -3,6 +3,7 @@ import { Option } from '../Option/Option';
 import styles from './styles.module.css';
 import { useEffect, useState, useRef } from 'react';
 import classnames from 'classnames';
+import { addTime, toFullDate } from '../../utils';
 
 type BookMenuProps = {
   hiddable?: boolean;
@@ -12,6 +13,8 @@ type BookMenuProps = {
 export const BookMenu = ({ hiddable, className = '' }: BookMenuProps): JSX.Element => {
   const [offset, setOffset] = useState(window.innerHeight);
   const bookMenuEl = useRef<HTMLDivElement>(null);
+  const periodStart = new Date();
+  const periodEnd = new Date(addTime(periodStart, 1));
 
   useEffect(() => {
     const footer: HTMLElement | null = document.querySelector('.footer');
@@ -41,13 +44,13 @@ export const BookMenu = ({ hiddable, className = '' }: BookMenuProps): JSX.Eleme
         <li className={styles['options__item']}>
           <Option
             label='Заезд'
-            value='24.10.22'
+            value={toFullDate(periodStart)}
           />
         </li>
         <li className={styles['options__item']}>
           <Option
             label='Выезд'
-            value='26.10.22'
+            value={toFullDate(periodEnd)}
           />
         </li>
         <li className={styles['options__item']}>

@@ -95,6 +95,7 @@ export const MainPage = (): JSX.Element => {
                     size={Size.lg}
                     button
                     className={styles.aparts}
+                    autoPlay
                   />
                 </Article>
                 <Article>
