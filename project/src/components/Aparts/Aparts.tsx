@@ -3,6 +3,8 @@ import styles from './styles.module.css';
 import classnames from 'classnames';
 import { LinkElement } from '../Link/Link';
 import { getItemFromItById } from '../../utils';
+import { motion } from 'framer-motion';
+import { TRANSITION_VARIANTS } from '../../const';
 
 type ApartsProps = {
   aparts: ApartsType;
@@ -23,7 +25,14 @@ export const Aparts = ({ aparts, images, size, handleClick, className = '' }: Ap
     },
   );
   return (
-    <div className={styles.aparts} onClick={() => handleClick && handleClick('/gallery')}>
+    <motion.div
+      className={styles.aparts}
+      onClick={() => handleClick && handleClick('/gallery')}
+      variants={TRANSITION_VARIANTS}
+      initial='initial'
+      animate='animate'
+      exit='exit'
+    >
       <img className={imgClass} src={image?.src} alt={image?.alt} />
       <div className={styles['aparts__info']}>
         <div className={styles.square}>
@@ -35,6 +44,6 @@ export const Aparts = ({ aparts, images, size, handleClick, className = '' }: Ap
           От <span>2200</span> ₽/ день
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

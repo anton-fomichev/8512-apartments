@@ -15,7 +15,6 @@ import { StoryType } from '../../types/types';
 import classnames from 'classnames';
 import { playVideoContent } from '../../utils';
 
-
 type SwiperSliderProps = {
   slides: StoryType[];
   className?: string;
@@ -57,7 +56,6 @@ export const SwiperSlider = ({
   options,
   handleClick,
   autoPlay = { delay: 5000 } }: SwiperSliderProps): JSX.Element => (
-
   <SwiperComponent
     className={classnames({ [className]: className.length > 0 }, 'swiper--8512-apartments')}
     modules={[Keyboard, Mousewheel, EffectCoverflow, Autoplay]}

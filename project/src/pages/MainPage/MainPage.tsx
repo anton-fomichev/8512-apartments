@@ -12,6 +12,9 @@ import { Article } from '../../components/Article/Article';
 import { SwiperSlider } from '../../components/SwiperSlider/SwiperSlider';
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { TRANSITION_VARIANTS } from '../../const';
+
 
 export const MainPage = (): JSX.Element => {
   const [isMobile, setIsMobile] = useState(false);
@@ -27,10 +30,14 @@ export const MainPage = (): JSX.Element => {
     setIsMobile(width < 700);
   }, []);
   return (
-    <>
+    <motion.div
+      variants={TRANSITION_VARIANTS}
+      initial='initial'
+      exit='exit'
+      animate='animate'
+    >
       <Header />
       <main className={styles['main-home']}>
-
         <Container>
           <BookMenu hiddable />
           <p className={styles.info}>
@@ -131,6 +138,6 @@ export const MainPage = (): JSX.Element => {
           </Article>}
       </main>
       <Footer />
-    </>
+    </motion.div>
   );
 };

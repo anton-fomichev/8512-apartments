@@ -3,6 +3,8 @@ import { Button } from '../Button/Button';
 import styles from './styles.module.css';
 import classnames from 'classnames';
 import { getItemFromItById } from '../../utils';
+import { motion } from 'framer-motion';
+import { TRANSITION_VARIANTS } from '../../const';
 
 type StoryProps = {
   story: StoryType;
@@ -28,7 +30,14 @@ export const Story = ({ story, images, size = Size.auto, button, className = '',
     },
   );
   return (
-    <div className={storyClass} onClick={() => handleClick && handleClick('/gallery')}>
+    <motion.div
+      variants={TRANSITION_VARIANTS}
+      initial='initial'
+      animate='animate'
+      exit='exit'
+      className={storyClass}
+      onClick={() => handleClick && handleClick('/gallery')}
+    >
       {image?.src.slice(image?.src.indexOf('.') + 1) === 'mp4' ?
         <video className={styles['story__img']} src={image?.src} loop={loop} muted autoPlay={autoPlay} /> : <img className={styles['story__img']} src={image?.src} alt={image?.alt} />}
 
@@ -44,6 +53,6 @@ export const Story = ({ story, images, size = Size.auto, button, className = '',
         <Button className={styles.button}>
           Смотреть
         </Button>}
-    </div>
+    </motion.div>
   );
 };
