@@ -5,6 +5,16 @@ export enum Size {
   auto
 }
 
+export enum FileType {
+  image = 'image',
+  video = 'video',
+}
+
+export enum BlockType {
+  aparts = 'apartments',
+  history = 'history',
+}
+
 export type StoryType = {
   id: number;
   text: string;
@@ -15,7 +25,7 @@ export type ImageType = {
   id: number;
   src: string;
   alt: string;
-};
+}
 
 export type ApartsType = {
   id: number;
@@ -23,4 +33,24 @@ export type ApartsType = {
   type: string;
   price: number;
   imageId: number;
+}
+
+export type HistoryType = {
+  file_type: FileType;
+  id: number;
+  file: string;
+  text: string;
+  parent: number;
+}
+
+export type Block = {
+  type: BlockType;
+  title?: string;
+  subtitle?: string;
+  term_price: number;
+  term?: string;
+  histories: HistoryType[];
+  file_type: FileType;
+  file: string;
+  id: number;
 }

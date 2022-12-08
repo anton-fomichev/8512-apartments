@@ -41,7 +41,7 @@ export const APARTS: ApartsType[] = [
 export const IMAGES: ImageType[] = [
   {
     id: 1,
-    src: 'img/story-1.jpg',
+    src: 'img/story-1.mp4',
     alt: 'Девушка на мягкой кровати с пультом',
   },
   {
@@ -66,3 +66,11 @@ export const IMAGES: ImageType[] = [
   },
 
 ];
+
+export const TRANSITION_VARIANTS = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1, transition: { duration: 0.15 } },
+  exit: { opacity: 0, transition: { duration: 0.15 } },
+};
+
+export const SERVER_URL = 'http://127.0.0.1:8000';

@@ -1,15 +1,11 @@
-import { Gallery } from '../../pages/Gallery/Gallery';
-import { MainPage } from '../../pages/MainPage/MainPage';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { AnimatedRoutes } from '../AnimatedRoutes/AnimatedRoutes';
+import { PostsProvider } from '../PostsProvider/PostsProvider';
 
 export const App = (): JSX.Element => (
-  <BrowserRouter>
-    <Routes>
-      <Route path='/'>
-        <Route index element={<MainPage />} />
-        <Route path='/gallery' element={<Gallery />} />
-      </Route>
-    </Routes>
-  </BrowserRouter>
-
+  <PostsProvider>
+    <BrowserRouter>
+      <AnimatedRoutes />
+    </BrowserRouter>
+  </PostsProvider>
 );
