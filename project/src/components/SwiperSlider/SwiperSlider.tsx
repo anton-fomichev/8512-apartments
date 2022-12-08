@@ -1,7 +1,5 @@
 import Swiper, { Autoplay, Keyboard, Mousewheel, EffectCoverflow } from 'swiper';
-import { IMAGES } from '../../const';
 import { Story } from '../Story/Story';
-import nextId from 'react-id-generator';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -11,12 +9,12 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/autoplay';
 
 import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react';
-import { StoryType } from '../../types/types';
+import { Block } from '../../types/types';
 import classnames from 'classnames';
 import { playVideoContent } from '../../utils';
 
 type SwiperSliderProps = {
-  slides: StoryType[];
+  slides: Block[];
   className?: string;
   sliderSlideClass?: string;
   options?: {
@@ -74,11 +72,10 @@ export const SwiperSlider = ({
   >
     {
       slides.map((slide) => (
-        <SwiperSlide className={sliderSlideClass} key={nextId()}>
+        <SwiperSlide className={sliderSlideClass} key={slide.id}>
           <Story
             handleClick={() => handleClick && handleClick('/gallery')}
             story={slide}
-            images={IMAGES}
             loop={false}
           />
         </SwiperSlide>

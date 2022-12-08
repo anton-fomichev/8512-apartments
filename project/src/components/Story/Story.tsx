@@ -1,14 +1,12 @@
-import { ImageType, Size, StoryType } from '../../types/types';
+import { Block, FileType, Size } from '../../types/types';
 import { Button } from '../Button/Button';
 import styles from './styles.module.css';
 import classnames from 'classnames';
-import { getItemFromItById } from '../../utils';
 import { motion } from 'framer-motion';
-import { TRANSITION_VARIANTS } from '../../const';
+import { SERVER_URL, TRANSITION_VARIANTS } from '../../const';
 
 type StoryProps = {
-  story: StoryType;
-  images: ImageType[];
+  story: Block;
   size?: Size;
   button?: boolean;
   className?: string;
@@ -17,9 +15,8 @@ type StoryProps = {
   autoPlay?: boolean;
 };
 
-export const Story = ({ story, images, size = Size.auto, button, className = '', handleClick, loop = true, autoPlay = false }: StoryProps): JSX.Element => {
-  const image = getItemFromItById(images, story.imageId);
-  const totalCount = 2;
+export const Story = ({ story, size = Size.auto, button, className = '', handleClick, loop = true, autoPlay = false }: StoryProps): JSX.Element => {
+  const totalCount = story.histories.length;
   const storyClass = classnames(
     styles.story,
     {
@@ -36,10 +33,16 @@ export const Story = ({ story, images, size = Size.auto, button, className = '',
       animate='animate'
       exit='exit'
       className={storyClass}
-      onClick={() => handleClick && handleClick('/gallery')}
+      onClick={() => handleClick && handleClick(`/gallery/${story.id}`)}
     >
-      {image?.src.slice(image?.src.indexOf('.') + 1) === 'mp4' ?
-        <video className={styles['story__img']} src={image?.src} loop={loop} muted autoPlay={autoPlay} /> : <img className={styles['story__img']} src={image?.src} alt={image?.alt} />}
+      {
+        story.file_type === FileType.video &&
+        <video className={styles['story__img']} src={`${SERVER_URL}/media/${story.file}`} loop={loop} muted autoPlay={autoPlay} />
+      }
+      {
+        story.file_type === FileType.image &&
+        <img className={styles['story__img']} src={`${SERVER_URL}/media/${story.file}`} alt={'random alt'} />
+      }
 
       <div className={styles['story__navigation']}>
         <span className={styles.this}>01</span>
@@ -48,7 +51,7 @@ export const Story = ({ story, images, size = Size.auto, button, className = '',
           {totalCount < 10 && '0'}{totalCount}
         </span>
       </div>
-      <p className={styles.content}>{story.text}</p>
+      <p className={styles.content}>{story.subtitle}</p>
       {button &&
         <Button className={styles.button}>
           Смотреть

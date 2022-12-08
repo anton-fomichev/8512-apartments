@@ -1,21 +1,18 @@
-import { ApartsType, ImageType, Size } from '../../types/types';
+import { Block, Size } from '../../types/types';
 import styles from './styles.module.css';
 import classnames from 'classnames';
 import { LinkElement } from '../Link/Link';
-import { getItemFromItById } from '../../utils';
 import { motion } from 'framer-motion';
-import { TRANSITION_VARIANTS } from '../../const';
+import { SERVER_URL, TRANSITION_VARIANTS } from '../../const';
 
 type ApartsProps = {
-  aparts: ApartsType;
-  images: ImageType[];
+  aparts: Block;
   size: Size;
   handleClick?: (route: string) => void;
   className?: string;
 };
 
-export const Aparts = ({ aparts, images, size, handleClick, className = '' }: ApartsProps): JSX.Element => {
-  const image = getItemFromItById(images, aparts.imageId);
+export const Aparts = ({ aparts, size, handleClick, className = '' }: ApartsProps): JSX.Element => {
   const imgClass = classnames(
     styles['aparts__img'],
     {
@@ -27,18 +24,19 @@ export const Aparts = ({ aparts, images, size, handleClick, className = '' }: Ap
   return (
     <motion.div
       className={styles.aparts}
-      onClick={() => handleClick && handleClick('/gallery')}
+      onClick={() => handleClick && handleClick(`/gallery/${aparts.id}`)}
       variants={TRANSITION_VARIANTS}
       initial='initial'
       animate='animate'
       exit='exit'
     >
-      <img className={imgClass} src={image?.src} alt={image?.alt} />
+      <img className={imgClass} src={`${SERVER_URL}/media/${aparts.file}`} alt={'random alt'} />
       <div className={styles['aparts__info']}>
         <div className={styles.square}>
-          <LinkElement href='#'>
-            {aparts.type} {aparts.square} м2
-          </LinkElement>
+          {aparts.subtitle &&
+            <LinkElement href='#'>
+              {aparts.subtitle}
+            </LinkElement>}
         </div>
         <div className={styles.price}>
           От <span>2200</span> ₽/ день

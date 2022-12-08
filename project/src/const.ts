@@ -69,6 +69,8 @@ export const IMAGES: ImageType[] = [
 
 export const TRANSITION_VARIANTS = {
   initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { duration: 0.3 } },
-  exit: { opacity: 0, transition: { duration: 0.3 } },
+  animate: { opacity: 1, transition: { duration: 0.15 } },
+  exit: { opacity: 0, transition: { duration: 0.15 } },
 };
+
+export const SERVER_URL = 'http://127.0.0.1:8000';
