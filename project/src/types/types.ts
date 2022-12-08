@@ -36,7 +36,7 @@ export type ApartsType = {
 }
 
 export type HistoryType = {
-  fileType: FileType;
+  file_type: FileType;
   id: number;
   file: string;
   text: string;

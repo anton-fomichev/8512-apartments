@@ -39,7 +39,7 @@ export const Aparts = ({ aparts, size, handleClick, className = '' }: ApartsProp
             </LinkElement>}
         </div>
         <div className={styles.price}>
-          От <span>2200</span> ₽/ день
+          От <span>{aparts.term_price}</span> ₽/ {aparts.term}
         </div>
       </div>
     </motion.div>

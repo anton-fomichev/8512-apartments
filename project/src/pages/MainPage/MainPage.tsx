@@ -5,7 +5,7 @@ import { MagazineLayout } from '../../components/MagazineLayout/MagazineLayout';
 import { Footer } from '../../components/Footer/Footer';
 import { Header } from '../../components/Header/Header';
 import { Story } from '../../components/Story/Story';
-import { Block, BlockType, Size } from '../../types/types';
+import { Block, BlockType, HistoryType, Size } from '../../types/types';
 import styles from './styles.module.css';
 import { Article } from '../../components/Article/Article';
 import { SwiperSlider } from '../../components/SwiperSlider/SwiperSlider';
@@ -14,6 +14,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { TRANSITION_VARIANTS } from '../../const';
 import { PostsContext } from '../../components/PostsProvider/PostsProvider';
+import { StoryCounter } from '../../components/StoryCounter/StoryCounter';
 
 
 export const MainPage = (): JSX.Element => {
@@ -57,10 +58,11 @@ export const MainPage = (): JSX.Element => {
                     <Story
                       autoPlay
                       handleClick={onStoryClick}
-                      story={block}
+                      story={block as Block & HistoryType}
                       size={Size.lg}
                       button
                       className={styles.story}
+                      counterElement={<StoryCounter current={1} totalCount={block.histories.length} />}
                     />}
                   {block.type === BlockType.aparts &&
                     <Aparts
@@ -83,10 +85,11 @@ export const MainPage = (): JSX.Element => {
                     <Story
                       autoPlay
                       handleClick={onStoryClick}
-                      story={block}
+                      story={block as Block & HistoryType}
                       size={Size.lg}
                       button
                       className={styles.story}
+                      counterElement={<StoryCounter current={1} totalCount={block.histories.length} />}
                     />}
                   {block.type === BlockType.aparts &&
                     <Aparts
@@ -109,7 +112,7 @@ export const MainPage = (): JSX.Element => {
               <SwiperSlider
                 handleClick={onStoryClick}
                 className={styles.slider}
-                slides={storyBlocks.slice(storyBlocks.length - 2, storyBlocks.length)}
+                slides={storyBlocks.slice(storyBlocks.length - 2, storyBlocks.length) as Block[] & HistoryType[]}
                 sliderSlideClass={styles['slider-slide']}
                 options={{ centeredSlides: false }}
               />

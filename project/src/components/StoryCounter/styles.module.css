@@ -1,0 +1,19 @@
+.story__counter {
+  font-size: 0.8em;
+  color: var(--white);
+}
+
+.this {
+  display: inline-flex;
+  align-items: center;
+}
+
+.this::after {
+  display: inline-block;
+  content: "";
+  width: 56px;
+  height: 1px;
+  background-color: var(--white);
+  margin-left: 11px;
+  margin-right: 8px;
+}
